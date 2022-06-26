@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './index.module.scss'
 import menubar from 'assets/svgs/menu.svg';
+import x from 'assets/svgs/x.svg';
 import Image from "next/image";
 
 const Header: React.FC = () => {
@@ -35,13 +36,12 @@ const Header: React.FC = () => {
         <div className={styles.right}>
           <div className={styles.menu} ref={outRef}>
             <button onClick={handleMenu}>
-              <Image src={menubar} width={28} alt="menu" />
+              {menu ? <Image src={x} width={24} height={24} alt="X" /> : <Image src={menubar} width={24} height={24} alt="menu" />}
             </button>
             {menu && (
               <div className={styles.drop}>
-                <a className={styles.item}>Explore</a>
-                <a className={styles.item}>Sponsor</a>
-                <a className={styles.item}>Terms of Service</a>
+                <a className={styles.item}>Support Qrker</a>
+                <p className={styles.item}>V 1.0</p>
               </div>
             )}
           </div>
